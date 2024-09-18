@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All chai</title>
-</head>
-<body>
-  All type of chai
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+  chai page
+{% endblock  %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold mb-4 ">All Chai for you</h1>
+  <div class="grid grid-cols-4">
+    {% for chai in chais %}
+      <div class="chai-item p-5 bg-white rounded-md bg-blue-100 shadow-md">
+        <img src="{{chai.image.url}}"  class="w-[500px] shadow-md rounded-md " alt="" />
+        <div class="cursor-pointer text-xl font-semibold italic font-serif mt-1  bg-blue-100 rounded-md text-black p-2">
+          {{chai.name}}
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Price - $ {{chai.price}}
+        </div> 
+        <a href="#">
+          <button class="bg-red-500 w-[100%] mt-2 p-1 rounded-2xl hover:bg-red-400 shadow-md">
+            {{chai.type}} - {{chai.id}}
+          </button>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock  %}
+
