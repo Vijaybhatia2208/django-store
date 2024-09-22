@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  chai page
+{% endblock  %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold mb-4 ">Chai detail page </h1>
+  <div class="grid grid-cols-4">
+    <div class="chai-item p-5 rounded-md bg-blue-100 shadow-md">
+      <img src="{{chai.image.url}}"  class="w-[500px] shadow-md rounded-md " alt="" />
+      <div class="cursor-pointer text-xl font-semibold italic font-serif mt-1  bg-blue-100 rounded-md text-black p-2">
+        {{chai.name}}
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      Price - $ {{chai.price}}
+      </div> 
+      <a href="#">
+        <p>{{ chai.description }}</p>
+        <button class="bg-red-500 w-[100%] mt-2 p-1 rounded-2xl hover:bg-red-400 shadow-md">
+          {{chai.type}} - {{chai.id}}
+        </button>
+      </a>
+    </div>
+  </div>
+{% endblock  %}
+
